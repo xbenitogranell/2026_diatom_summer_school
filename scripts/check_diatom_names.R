@@ -1,10 +1,13 @@
-#Function to check ACA codes and extract synonyms and names from OMNIDIA 2015 database
+#Function to check diatom names and extract synonyms and names from OMNIDIA 2015 database
 check_diatom_names <- function(diatnames="", 
                               omnidia="") {
   
   library(tidyverse)
   library(readxl)
   library(qdapTools)
+  
+  # read full synonyms OMNIDIA table (2015 version)
+  # Omnidia_2015_full_synonyms_table <- openxlsx::read.xlsx("data/Omnidia_2015_full_synonyms_table_XB.xlsx")
   
   #Add user list to new conversion dataframe
   conversion_df <- taxa_names_all
@@ -25,7 +28,7 @@ check_diatom_names <- function(diatnames="",
   conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern=" s. l. ", replacement=" s.l. ", fixed =TRUE)
 
   #Compare user names to Omnidia taxon list
-  diat_omnidia <- Omnidia_2015_full_synonyms_table
+  diat_omnidia <- openxlsx::read.xlsx("data/Omnidia_2015_full_synonyms_table_XB.xlsx")
 
   # Add the name of user taxa's code
   conversion_df$Omnidia_code<- lookup_e(conversion_df$user_taxa_lev1, diat_omnidia[,c("DENOM_lev1","CODE")])

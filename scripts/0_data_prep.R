@@ -1,7 +1,21 @@
-#Load packages
-library(tidyverse)
-library(ggplot2)
-library(diathor)
+## Diatom monitoring workshop @ 2nd Diatom Summer School, Szczecin, Poland
+## August 26th, 2026
+## Xavier Benito
+## contact: xavier.benito@irta.cat
+## https://xbenitogranell.github.io/ 
+
+#----------------------------------------------------------------------------------------------------------------------------------
+# This document contains scripts to prepare the two diatom datasets for the diatom monitoring exercise, including:
+# 1) load the datasets
+# 2) harmonize diatom names by the most current accepted synonym and aggregate counts if two or more column names have been updated
+#----------------------------------------------------------------------------------------------------------------------------------
+
+# Clean workspace first
+rm(list = ls())
+
+# The library pacman loads the necessary packages if they are installed in your R environment. Else pacman() will install and load them
+#install.packages("pacman") #install the library
+pacman::p_load(openxlsx, tidyverse, diathor, egg, vegan, corrplot)
 
 ## Elegant way to read multiple excel sheets per Excel file
 # load names of excel files 
@@ -56,10 +70,7 @@ taxa_names_all <- taxa_names_all[taxa_names_all != "sample_id"] %>%
 names(taxa_names_all) <- "user_taxa"
 
 # Load the harmonization function
-source("scripts/check_OMNIDIA_synonyms.R")
-
-# read full synonyms OMNIDIA table (2015 version)
-Omnidia_2015_full_synonyms_table <- openxlsx::read.xlsx("data/Omnidia_2015_full_synonyms_table_XB.xlsx")
+source("scripts/check_diatom_names.R")
 
 # Run the function
 list <- check_diatom_names(diatnames="taxa_names_all", 
