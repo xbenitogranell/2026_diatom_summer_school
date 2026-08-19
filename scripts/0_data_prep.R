@@ -44,17 +44,18 @@ ebro <- ebro %>%
 
 # Now the two datasets are in wide-format (site-by-species abundance matrix)
 
-## Nomenclature harmonization
+## Diatom nomenclature harmonization
 # Create a look-up table for the Segura and Ebro Delta diatom names list
 taxa_names_seg <- colnames(seg)
 taxa_names_ebro <- colnames(ebro)
 
 taxa_names_all <- c(taxa_names_seg, taxa_names_ebro)
 taxa_names_all <- taxa_names_all[taxa_names_all != "sample_id"] %>%
-  as.data.frame()
+  as.data.frame() %>%
+  distinct()
 names(taxa_names_all) <- "user_taxa"
 
-
+# Load the harmonization function
 source("scripts/check_OMNIDIA_synonyms.R")
 
 # read full synonyms OMNIDIA table (2015 version)
@@ -63,6 +64,9 @@ Omnidia_2015_full_synonyms_table <- openxlsx::read.xlsx("data/Omnidia_2015_full_
 # Run the function
 list <- check_diatom_names(diatnames="taxa_names_all", 
                            omnidia="Omnidia_2015_full_synonyms_table")
+
+# Have a look a the resulting list
+print(list)
 
 # Update the diatom counts with the harmonized list of names
 ebro_harm <- ebro %>% 
