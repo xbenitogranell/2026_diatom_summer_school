@@ -6,16 +6,13 @@ check_diatom_names <- function(diatnames="",
   library(readxl)
   library(qdapTools)
   
-  # read full synonyms OMNIDIA table (2015 version)
-  # Omnidia_2015_full_synonyms_table <- openxlsx::read.xlsx("data/Omnidia_2015_full_synonyms_table_XB.xlsx")
-  
   #Add user list to new conversion dataframe
   conversion_df <- taxa_names_all
   names(conversion_df) <- "user_taxa"
   
-  ## Step 1: make sure var. cf., and forma, etc are written correctly for Omnidia standards. The result is lev1 column
+  ## make sure var. cf., and forma, etc are written correctly for Omnidia standards. The result is lev1 column
   conversion_df$user_taxa_lev1 <- trimws(gsub("\\s+", " ", conversion_df[,"user_taxa"]))
-  conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern=" sp ", replacement=" sp. ", fixed =TRUE)
+  conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern="\\bsp\\b(?!\\.)", replacement="sp.", perl=TRUE)
   conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern=" var ", replacement=" var. ", fixed = TRUE)
   conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern=" cf ", replacement=" cf. ", fixed=TRUE)
   conversion_df$user_taxa_lev1 <- gsub(conversion_df$user_taxa_lev1, pattern=" for. ", replacement=" fo. ", fixed =TRUE)

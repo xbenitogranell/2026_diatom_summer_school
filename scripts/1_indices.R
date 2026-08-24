@@ -36,7 +36,7 @@ seg_harm_t <- t(seg_harm) %>%
   rownames_to_column(var="species") %>%
   mutate(across(-species, as.numeric))
 
-# check and convert the input data in the proper format that the package diathor() needs to calculate indices
+# Load the diatom dataset in the proper format that the package diathor() needs to calculate indices
 # Each time diat_loadData() is executed, a new set of results in the output folder "results" is created
 df_ebro <- diat_loadData(ebro_harm_t, maxDistTaxa = 2, resultsPath = results_path)
 df_seg <- diat_loadData(seg_harm_t, maxDistTaxa = 2, resultsPath = results_path)

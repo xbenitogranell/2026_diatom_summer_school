@@ -41,8 +41,8 @@ ggplot(env_ips_ebro, aes(x = area, y = IPS20,)) +
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = 0,  ymax = 5,  fill = "#d7191c", alpha = 0.15) + # Bad (Red)
   # geom_hline(yintercept = status_lines, linetype = "dashed", color = "grey40", size = 0.5) +
   geom_boxplot(alpha = 0.7) +
-  geom_jitter(width = 0.15, alpha = 0.5, color = "black") + # Adds individual data points
-  scale_fill_viridis_d(option = "mako") +                 # Uses a clean color palette
+  geom_jitter(width = 0.15, alpha = 0.5, color = "black") + 
+  scale_fill_viridis_d(option = "mako") +                 
   labs(x = "",y = "IPS value") +
   theme_article() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -95,8 +95,8 @@ ggplot(env_ips_seg, aes(x = site, y = IPS20)) +
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = 0,  ymax = 5,  fill = "#d7191c", alpha = 0.15) + # Bad (Red)
   # geom_hline(yintercept = status_lines, linetype = "dashed", color = "grey40", size = 0.5) +
   geom_boxplot(alpha = 0.7) +
-  geom_jitter(width = 0.15, alpha = 0.5, color = "black") + # Adds individual data points
-  scale_fill_viridis_d(option = "mako") +                 # Uses a clean color palette
+  geom_jitter(width = 0.15, alpha = 0.5, color = "black") + 
+  scale_fill_viridis_d(option = "mako") +                 
   labs(x = "",y = "IPS value") +
   theme_article() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))

@@ -7,7 +7,7 @@ Repository containing scripts and data for the exercises on diatom biomonitoring
 
 # Repository structure
 1. scripts: codes for running all the analyses sequentally 
-2. data: diatom datasets including the [Ebro Delta][https://doi.org/10.5281/zenodo.15113793] and Segura River (**unpublished**) regions as well as associated environmental variables (water chemistry)
+2. data: diatom counts including the [Ebro Delta](https://doi.org/10.5281/zenodo.15113793) and Segura River (**unpublished**) datasets as well as associated environmental variables (water chemistry)
 
 # Main package used
 [Diathor](https://github.com/limnolab/DiaThor) Version 0.1.6. Publication: [DOI](https://www.sciencedirect.com/science/article/pii/S0304380021003975)
