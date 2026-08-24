@@ -52,10 +52,14 @@ print(ips_ebro)
 # IPS20: normalized to the standard 0-20 range
 # num_taxa: n diatom taxa used to compute the index
 
-## In the results folder, there are three exported files:
-#num_taxa.csv: number of how many taxa were used to calculate the index for each sample. 
-#Taxa_included.csv: taxa recognized for the calculation of the index
-#Taxa_excluded.csv: taxa not recognized for the calculation of the index
+# The s and v values included in the IPS index can also be obtained running this function:
+data(ips)
+
+### In the results folder, there are three exported files:
+# num_taxa.csv: number of how many taxa were used to calculate the index for each sample. 
+# Taxa_included.csv: taxa recognized for the calculation of the index
+# Taxa_excluded.csv: taxa not recognized for the calculation of the index
+###
 
 ## Additional ecological information
 # Van Dam classification
