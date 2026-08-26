@@ -6,7 +6,7 @@ Repository containing scripts and data for the exercises on diatom biomonitoring
 2. If you have a [GitHub account](https://github.com/) and can use [git](https://git-scm.com/), you can [clone the repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 # Repository structure
-1. scripts: codes for running all the analyses sequentally 
+1. scripts: codes for running all the analyses sequentially 
 2. data: diatom counts including the [Ebro Delta](https://doi.org/10.5281/zenodo.15113793) and Segura River (**unpublished**) datasets as well as associated environmental variables (water chemistry)
 
 # Resources used
