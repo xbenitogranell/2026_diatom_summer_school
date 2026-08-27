@@ -19,7 +19,7 @@ if (!dir.exists("results")) {
 }
 
 # The library pacman loads the necessary packages if they are installed in your R environment. Else pacman() will install and load them
-#install.packages("pacman") #install the library
+install.packages("pacman") #install the library
 pacman::p_load(openxlsx, tidyverse, diathor, egg, vegan, corrplot, Hmisc)
 
 ## Elegant way to read multiple excel sheets per Excel file
