@@ -15,4 +15,4 @@ Repository containing scripts and data for the exercises on diatom biomonitoring
 - Indice de Polluosensibilité (IPS) or Specific Pollution Sensibility Index: [Coste, M 1992](https://www.documentation.eauetbiodiversite.fr/notice/etude-des-methodes-biologiques-d-appreciation-quantitative-de-la-qualite-des-eaux0) 
 
 # License
-All code contained within this repository are publicly accessible under a Creative Commons By Attribution Non-commercial 4.0 International licence. However, note that the some files are not public domain, and access to the raw data is restricted. Reasonable requests will be considered.
+All code contained within this repository are publicly accessible under a Creative Commons By Attribution Non-commercial 4.0 International licence. However, note that the some files are not public domain and have been removed after the workshop. Access to the raw data is restricted. Reasonable requests will be considered.
